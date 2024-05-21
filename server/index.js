@@ -10,7 +10,7 @@ dotenv.config();
 
 const app = express();
 const port = process.env.PORT || 2000;
-const URI = process.env.MongoDBURI;
+const URI = "mongodb+srv://dhurir163:Rohit%401223@cluster0.ggspzxv.mongodb.net/myDatabase?retryWrites=true&w=majority";
 
 // Log the URI to ensure it is being read correctly
 console.log('MongoDB URI:', URI);
