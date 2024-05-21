@@ -23,7 +23,7 @@ function Signup() {
       password: data.password,
     };
     await axios
-      .post("http://localhost:4001/user/signup", userInfo)
+      .post("book-store-api-virid.vercel.app/user/signup", userInfo)
       .then((res) => {
         console.log('Server Response:', res.data); // Debugging line
         if (res.data) {
