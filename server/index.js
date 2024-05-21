@@ -40,7 +40,7 @@ app.get("/", (req, res) => {
 
 // Defining Routes
 app.use("/book", bookRoute);
-app.use("/user", userRoute);
+app.use("/user", User);
 
 app.listen(port, () => {
     console.log(`Server running on localhost:${port}`);
