@@ -16,7 +16,7 @@ function Login() {
       emailid : data.emailid,
       password : data.password,
     }
-   await axios.post("book-store-api-virid.vercel.app/user/login",userInfo)
+   await axios.post("https://book-store-api-virid.vercel.app/user/login",userInfo)
     .then((res)=>{
       console.log(res.data);
       if(res.data){
