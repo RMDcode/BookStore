@@ -34,6 +34,10 @@ const connectToDatabase = async () => {
 
 connectToDatabase();
 
+app.get("/",(req,res)=>{
+    res.json("Hello");
+})
+
 // Defining Routes
 app.use("/book", bookRoute);
 app.use("/user", User);
