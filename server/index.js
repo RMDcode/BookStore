@@ -53,7 +53,7 @@ app.get("/",(req,res)=>{
 
 // Defining Routes
 app.use("/book", bookRoute);
-app.use("/user", User);
+app.use("/user", userRoute);
 
 app.listen(port, () => {
     console.log(`Server running on localhost:${port}`);
