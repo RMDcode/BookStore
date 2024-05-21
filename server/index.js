@@ -4,25 +4,25 @@ import mongoose from 'mongoose';
 import cors from 'cors';
 
 import bookRoute from "./route/book.route.js";
-import User from './route/user.route.js';
-
-const app = express();
-app.use(cors({
-    origin:["https://book-store-frontend-beige-six.vercel.app"],//frontend link
-    methods:["POST","GET"],
-    credentials:true
-}
-));
-app.use(express.json());
+import userRoute from './route/user.route.js';
 
 dotenv.config();
+
+const app = express();
 const port = process.env.PORT || 2000;
 const URI = process.env.MongoDBURI;
 
 // Log the URI to ensure it is being read correctly
 console.log('MongoDB URI:', URI);
 
-// Connect to MongoDB
+app.use(cors({
+    origin: ["https://book-store-frontend-beige-six.vercel.app"], // frontend link
+    methods: ["POST", "GET"],
+    credentials: true
+}));
+
+app.use(express.json());
+
 const connectToDatabase = async () => {
     try {
         await mongoose.connect(URI);
@@ -33,6 +33,19 @@ const connectToDatabase = async () => {
 };
 
 connectToDatabase();
+
+app.get("/", (req, res) => {
+    res.json("Hello");
+});
+
+// Defining Routes
+app.use("/book", bookRoute);
+app.use("/user", userRoute);
+
+app.listen(port, () => {
+    console.log(`Server running on localhost:${port}`);
+});
+
 
 app.get("/",(req,res)=>{
     res.json("Hello");
