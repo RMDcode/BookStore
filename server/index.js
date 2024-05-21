@@ -45,16 +45,3 @@ app.use("/user", User);
 app.listen(port, () => {
     console.log(`Server running on localhost:${port}`);
 });
-
-
-app.get("/",(req,res)=>{
-    res.json("Hello");
-})
-
-// Defining Routes
-app.use("/book", bookRoute);
-app.use("/user", userRoute);
-
-app.listen(port, () => {
-    console.log(`Server running on localhost:${port}`);
-});
