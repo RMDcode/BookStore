@@ -8,7 +8,7 @@ import User from './route/user.route.js';
 
 const app = express();
 app.use(cors({
-    origin:[""],//frontend link
+    origin:["https://book-store-frontend-beige-six.vercel.app/"],//frontend link
     methods:["POST","GET"],
     credentials:true
 }
