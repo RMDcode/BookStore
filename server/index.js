@@ -16,7 +16,7 @@ const URI = "mongodb+srv://dhurir163:Rohit%401223@cluster0.ggspzxv.mongodb.net/m
 console.log('MongoDB URI:', URI);
 
 app.use(cors({
-    origin: ["https://book-store-frontend-beige-six.vercel.app"], // frontend link
+    origin: ["https://bookstore1-ten.vercel.app"], // frontend link
     methods: ["POST", "GET"],
     credentials: true
 }));
